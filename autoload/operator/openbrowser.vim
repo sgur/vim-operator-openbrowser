@@ -44,7 +44,7 @@ function! operator#openbrowser#do(motion_wise)
     let start = col("'<")-1
     let end = col("'>")-1
     let lines = map(getline(line("'<"), line("'>")),
-          \ 'v:val[start, end]'
+          \ 'v:val[start : end]'
           \ )
   endif
   call openbrowser#smart_search(join(lines))
